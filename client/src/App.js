@@ -18,7 +18,7 @@ class App extends Component {
         // (Note the route we are fetching matches the GET
         // route from server.js)
         callBackendAPI = async () => {
-          const response = await fetch('/data')
+          const response = await fetch('http://127.0.0.1:8000/api/item/')
           const body = await response.json()
           
           if (response.status !== 200) {
@@ -26,10 +26,13 @@ class App extends Component {
           }
           let now = new Date();
           console.log("Data has been fetched !", now);
+          console.log(body);
           return body
         }
   ///////////////////////////////////////////////////////////////////////////////////////
-  componentWillMount = () => {
+  constructor(props) {
+    super(props);
+    this.state = { data: [] };
     this.selectedCheckboxes = new Set();
   }
   
@@ -70,25 +73,11 @@ render() {
           <h1 className='App-title'>Let's pack !</h1>
         </header>
         <div id='App-form'>
-          {/* <form name='checklist-1'>
-            {items.map((item) => (<Checkbox key={item.id} item={item}/>))}
-          </form> */}
-            <form className="inner" onSubmit={this.handleFormSubmit}>
-              {this.createCheckboxes()}
-              <button className="btn" type="submit">Save</button>
-            </form>
-            <form className="inner" onSubmit={this.handleFormSubmit}>
-              {this.createCheckboxes()}
-              <button className="btn" type="submit">Save</button>
-            </form>
             <form className="inner" onSubmit={this.handleFormSubmit}>
               {this.createCheckboxes()}
               <button className="btn" type="submit">Save</button>
             </form>
         </div>
-        
-        {/* // Render the newly fetched data inside of this.state.data */}
-        {/* <p className="App-intro">{this.state.data}</p> */}
       </div>
     );
   }
