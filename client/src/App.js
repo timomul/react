@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.png';
 import './App.css';
-import Checkbox from './checkbox';
+import Checkbox from './components/item_component';
 
 class App extends Component {
   ///////////////////////////Partie connection backend////////////////////////////////////
@@ -11,9 +11,9 @@ class App extends Component {
     .then(res => this.setState({ data: res }))          
     .catch(err => console.log(err))
   }
-  
+
   callBackendAPI = async () => {
-    const response = await fetch('http://127.0.0.1:8000/api/item/')
+    const response = await fetch('http://checkngo.ighilr.fr/api/items/')
     const body = await response.json()
     
     if (response.status !== 200) {
@@ -31,11 +31,11 @@ class App extends Component {
     this.selectedCheckboxes = new Set();
   }
   
-  toggleCheckbox = label => {
-    if (this.selectedCheckboxes.has(label)) {
-      this.selectedCheckboxes.delete(label);
+  toggleCheckbox = ItemName => {
+    if (this.selectedCheckboxes.has(ItemName)) {
+      this.selectedCheckboxes.delete(ItemName);
     }else{
-      this.selectedCheckboxes.add(label);
+      this.selectedCheckboxes.add(ItemName);
     }
   }
   
@@ -46,11 +46,11 @@ class App extends Component {
     }
   }
   
-  createCheckbox = label => (
+  createCheckbox = ItemName => (
     <Checkbox
-    label={label}
+    ItemName={ItemName}
     handleCheckboxChange={this.toggleCheckbox}
-    key={label}
+    key={ItemName}
     />
     )
     
