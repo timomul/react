@@ -8,9 +8,6 @@ export default class Checkbox extends Component {
   
 	toggleCheckboxChange = () => {
     const { handleCheckboxChange, label } = this.props;
-    // const { object } = this.props;
-    console.log( 'label', label)    
-    console.log('props', this.props)
 
 		this.setState(({ isChecked }) => (
       {

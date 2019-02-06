@@ -4,7 +4,7 @@ import './App.css';
 import Checkbox from './checkbox';
 
 class App extends Component {
-  ///////////////////////////Partie connection backend////////////////////////////////////////////////////////////
+  ///////////////////////////Partie connection backend////////////////////////////////////
   componentDidMount(){
     // Call our fetch function below once the component mounts
     this.callBackendAPI()
