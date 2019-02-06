@@ -5,30 +5,25 @@ import Checkbox from './checkbox';
 
 class App extends Component {
   ///////////////////////////Partie connection backend////////////////////////////////////////////////////////////
-        state = {
-          data: []
-        }
-        componentDidMount(){
-          // Call our fetch function below once the component mounts
-          this.callBackendAPI()
-          .then(res => this.setState({ data: res.items }))          
-          .catch(err => console.log(err))
-        }
-        // Fetches our GET route from the Express server.
-        // (Note the route we are fetching matches the GET
-        // route from server.js)
-        callBackendAPI = async () => {
-          const response = await fetch('http://localhost:5000/data')
-          const body = await response.json()
-          
-          if (response.status !== 200) {
-            throw Error(body.message)
-          }
-          let now = new Date();
-          console.log("Data has been fetched !", now);
-          console.log(body);
-          return body
-        }
+  componentDidMount(){
+    // Call our fetch function below once the component mounts
+    this.callBackendAPI()
+    .then(res => this.setState({ data: res.items }))          
+    .catch(err => console.log(err))
+  }
+
+  callBackendAPI = async () => {
+    const response = await fetch('http://localhost:5000/data')
+    const body = await response.json()
+    
+    if (response.status !== 200) {
+      throw Error(body.message)
+    }
+    let now = new Date();
+    console.log("Data has been fetched !", now);
+    console.log(body);
+    return body
+  }
   ///////////////////////////////////////////////////////////////////////////////////////
   constructor(props) {
     super(props);
