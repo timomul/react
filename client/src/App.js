@@ -8,12 +8,12 @@ class App extends Component {
   componentDidMount(){
     // Call our fetch function below once the component mounts
     this.callBackendAPI()
-    .then(res => this.setState({ data: res.items }))          
+    .then(res => this.setState({ data: res }))          
     .catch(err => console.log(err))
   }
-
+  
   callBackendAPI = async () => {
-    const response = await fetch('http://localhost:5000/data')
+    const response = await fetch('http://127.0.0.1:8000/api/item/')
     const body = await response.json()
     
     if (response.status !== 200) {
@@ -41,7 +41,6 @@ class App extends Component {
   
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
-    
     for (const checkbox of this.selectedCheckboxes) {
       console.log(checkbox, 'is selected');
     }

@@ -34,21 +34,20 @@
 }
 
 #App-form .inner{
-  max-width: 200px;
+  min-width: 270px;
+  max-width: 350px;
   margin: 15px 15px 15px 15px ;
   background-color: #1a2435c7;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  /* justify-content: center; */
 }
 
 .checkbox{
   margin: 5px 5px 0px 5px;
   text-align: left;
   display: flex;
-  /* background-color: #081120c7; */
   text-indent: -26px;
   padding-left: 25px;
 }
