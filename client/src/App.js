@@ -18,7 +18,7 @@ class App extends Component {
         // (Note the route we are fetching matches the GET
         // route from server.js)
         callBackendAPI = async () => {
-          const response = await fetch('http://127.0.0.1:8000/api/item/')
+          const response = await fetch('http://localhost:5000/data')
           const body = await response.json()
           
           if (response.status !== 200) {
