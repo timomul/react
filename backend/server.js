@@ -6,30 +6,24 @@ const app = express();
 // app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // create a GET route
-const data = [{
-  "id": 1,
-  "category_name": "Documents importants",
-  "name": "Carte d'identité",
-  "category": 1
-},
-{
-  "id": 2,
-  "category_name": "Documents importants",
-  "name": "Passeport",
-  "category": 1
-},
-{
-  "id": 3,
-  "category_name": "Documents importants",
-  "name": "Visa",
-  "category": 1
-},
-{
-  "id": 4,
-  "category_name": "Documents importants",
-  "name": "Carnet de vaccination",
-  "category": 1
-} ]
+const data = {items : [
+  {
+    "id": 1,
+    "name": "chaussettes"
+  },
+  {
+    "id": 2,
+    "name": "slip"
+  },
+  {
+    "id": 3,
+    "name": "brosse à dents"
+  },
+  {
+    "id": 4,
+    "name": "cape de pluie"
+  }
+  ]}
 
 app.get('/data', (req, res) => {
   let now = new Date();
