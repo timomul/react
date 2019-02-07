@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
-export default class Checkbox extends Component {
+export default class Item extends Component {
   state = {
     isChecked: false,
   }
@@ -23,7 +23,7 @@ export default class Checkbox extends Component {
       const { isChecked } = this.state;
       
       return (
-        <div className ="checkbox">
+        <div className ="item">
 				<label>
 					<input
 					type="checkbox"
@@ -38,7 +38,7 @@ export default class Checkbox extends Component {
   }
 }
 
-Checkbox.propTypes = {
+Item.propTypes = {
   ItemName: PropTypes.string.isRequired,
 	handleCheckboxChange: PropTypes.func.isRequired,
 };
