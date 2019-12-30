@@ -1,31 +1,25 @@
 {
-  "name": "server.js",
-  "version": "1.0.0",
-  "description": "## Description du projet :",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/jbolaty/checklist.git"
-  },
-  "author": "Timothée Poussard",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://gitlab.com/jbolaty/checklist/issues"
-  },
-  "homepage": "https://gitlab.com/jbolaty/checklist#readme",
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "express": "^4.16.4",
-    "prop-types": "^15.6.2"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.2"
   },
-  "devDependencies": {
-    "eslint": "^5.11.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.12.0"
-  }
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
