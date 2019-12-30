@@ -1,6 +1,7 @@
 # Travel checklist
 ## Installation
-Clone the project locally, change directory to 'client' and in a terminal run `npm i` to install dependencies, then run `npm start` <br>
+Clone the project locally, change directory to /client and in a terminal run `npm i` to install dependencies, then run `npm start` <br>
+Don't forget to disable CORS security by adding the extension to your web browser (cors everywhere for instance on firefox)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
